@@ -60,5 +60,36 @@ namespace AddressBookADO
                 sqlConnection.Close();
             }
         }
+        public void EditExistingContact()
+        {
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand("spEditExistingContact", this.sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                Console.Write("Give FirstName Of Contact You Want to Update Address: ");
+                string firstName = Console.ReadLine();
+                sqlCommand.Parameters.AddWithValue("@FirstName", firstName);
+                Console.Write("Give New Address: ");
+                string address = Console.ReadLine();
+                sqlCommand.Parameters.AddWithValue("@Address", address);
+                sqlConnection.Open();
+                int effectedRows = sqlCommand.ExecuteNonQuery();
+                if (effectedRows >= 1)
+                {
+                    Console.WriteLine("-----Edited Successfully-----");
+                }
+                else
+                    Console.WriteLine("-----Something Went Wrong-----");
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+        }
     }
 }
