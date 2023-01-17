@@ -33,3 +33,7 @@ Delete from AddressBook Where FirstName='Nagesh';
 
 --Retrieve Contact Belongs To City Or State
 Select * From AddressBook Where City='Latur' or State='MH';
+
+--Size Of AddressBook By City
+Select Count(City) as 'NumberOfContacts' from AddressBook Where City='Latur' Group by City;
+Select Count(State) as 'NumberOfContacts' from AddressBook Where State='MH' Group by State;
