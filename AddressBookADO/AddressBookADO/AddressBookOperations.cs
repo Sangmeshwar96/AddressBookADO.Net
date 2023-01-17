@@ -91,5 +91,33 @@ namespace AddressBookADO
             }
 
         }
+        public void DeleteContact()
+        {
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand("spDeleteContact", this.sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                Console.Write("Give FirstName Of Contact To Delete: ");
+                string firstName = Console.ReadLine();
+                sqlCommand.Parameters.AddWithValue("@FirstName", firstName);
+                sqlConnection.Open();
+                int effectedRows = sqlCommand.ExecuteNonQuery();
+                if (effectedRows >= 1)
+                {
+                    Console.WriteLine("-----Deleted Successfully-----");
+                }
+                else
+                    Console.WriteLine("-----Something Went Wrong-----");
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+        }
     }
 }
