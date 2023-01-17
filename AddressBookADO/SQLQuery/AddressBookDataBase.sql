@@ -14,4 +14,19 @@ Zip bigint not null ,
 PhoneNumber bigint not null,
 Email varchar(50)not null
 )
+Select * From AddressBook;
+
+--Inserting Data Into AddressBook Table
+Insert into AddressBook (FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email) values('Sangmeshwar', 'Patil', 'Udgir', 'Latur', 'MH', '413519', '8956231245', 'sangmeshwar@gmail.com')
+Insert into AddressBook (FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email) values('Pramod', 'Pawar', 'Ausa', 'Latur', 'MH', '413518', '2222222222', 'pramod@gmail.com')
+Insert into AddressBook (FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email) values('Apurva', 'Shinde', 'Kharadi', 'Pune', 'MH', '413517', '5623897425', 'Apurva@gmail.com')
+Insert into AddressBook (FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email) values('Shubham', 'Deshpande', 'Nilanga', 'Akola', 'MH', '496895', '888888888', 'Shubhamd@gmail.com')
+Insert into AddressBook (FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email) values('Nagesh', 'Nawade', 'Nanded', 'Nanded', 'MH', '413256', '8529637894', 'Nageshn@gmail.com')
+Insert into AddressBook (FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email) values('Rajkumar', 'Bhosle', 'Latur', 'Latur', 'MH', '413516', '8523697412', 'raju@gmail.com')
 Select * From AddressBook
+
+--Editing/Updating Existing Record
+Update AddressBook Set Address='Karamchedu' Where FirstName='Bharath'
+
+--Deleting Existing Record From AddressBook Table
+Delete from AddressBook Where FirstName='Nagesh';
