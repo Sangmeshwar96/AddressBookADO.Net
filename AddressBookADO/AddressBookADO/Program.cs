@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 
 namespace AddressBookADO
 {
@@ -7,6 +8,8 @@ namespace AddressBookADO
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Address Book System ADO.Net!");
+            Option operation = new Option();
+            operation.AddressBookOperation();
         }
     }
 }
