@@ -30,3 +30,6 @@ Update AddressBook Set Address='Karamchedu' Where FirstName='Bharath'
 
 --Deleting Existing Record From AddressBook Table
 Delete from AddressBook Where FirstName='Nagesh';
+
+--Retrieve Contact Belongs To City Or State
+Select * From AddressBook Where City='Latur' or State='MH';
